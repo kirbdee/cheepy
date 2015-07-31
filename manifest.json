@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Cheepy",
+  "description": "Find the cheapest price across trusted stores!",
+  "version": "0.1",
+  "browser_action": {
+    "default_title": "Cheepy",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/*"
+  ],
+  "background": {
+    "scripts": ["domains.js","background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
